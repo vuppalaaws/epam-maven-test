@@ -1,4 +1,8 @@
+#!groovy
 @Library('test-pipeline-library') _
-import com.example.*
-
-new Pipeline(this, "config.yml").execute()
+Pipeline{
+    branch="main"
+    credentials="pipeline-credentials"
+    gitUrl="https://github.com/vuppalaaws/epam-maven-test.git"
+    configurationFile="./config.yml"
+}
